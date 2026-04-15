@@ -1,6 +1,8 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
 metadata:
   name: milvus-etcd-pvc
-  namespace: ai-services  # 将PVC也放入ai-services命名空间
+  namespace: milvus  # 将PVC也放入ai-services命名空间
 spec:
   accessModes: #卷可以被单个节点以读写方式挂载，避免并发写入导致数据损坏或状态不一致
     - ReadWriteOnce
@@ -8,13 +10,14 @@ spec:
   resources:
     requests:
       storage: 10Gi
+
 ---
 # --- 为minio创建PV ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: milvus-minio-pvc
-  namespace: ai-services
+  namespace: milvus
 spec:
   accessModes:
     - ReadWriteOnce
@@ -28,7 +31,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: milvus-standalone-pvc
-  namespace: ai-services
+  namespace: milvus
 spec:
   accessModes:
     - ReadWriteOnce
