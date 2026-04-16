@@ -39,7 +39,7 @@ spec:
           standalone:
             persistence:
               enabled: true
-              # storageClass: ""
+              storageClass: ""
               size: 50Gi
             resources:
               requests:
