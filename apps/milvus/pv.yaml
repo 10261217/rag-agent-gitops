@@ -2,3 +2,13 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: milvus
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: milvus-standalone-pv
+spec:
+  capacity: { storage: 50Gi }
+  accessModes: [ReadWriteOnce]
+  persistentVolumeReclaimPplicy: Retain
+  hostPath: { path: "/data/milvus-standalone" }
