@@ -38,6 +38,6 @@ spec:
 
           standalone:
             persistence:
-              storageClass: "openebs-hostpath-retain"
+              storageClass: "openebs-hostpath"
               size: 30Gi
 
