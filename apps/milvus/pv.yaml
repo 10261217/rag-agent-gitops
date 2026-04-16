@@ -10,5 +10,5 @@ metadata:
 spec:
   capacity: { storage: 50Gi }
   accessModes: [ReadWriteOnce]
-  persistentVolumeReclaimPplicy: Retain
+  persistentVolumeReclaimPolicy: Retain
   hostPath: { path: "/data/milvus-standalone" }
