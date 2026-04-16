@@ -39,7 +39,7 @@ spec:
           standalone:
             persistence:
               storageClass: "openebs-hostpath-retain"
-              size: 50Gi
+              size: 30Gi
             resources:
               requests:
                 cpu: "500m"
