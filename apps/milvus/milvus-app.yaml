@@ -39,6 +39,12 @@ spec:
           standalone:
             persistence:
               enabled: true
-              storageClass: ""
-              size: 30Gi
-
+              # storageClass: ""
+              size: 50Gi
+            resources:
+              requests:
+                cpu: "500m"
+                memory: "1Gi"
+              limits:
+                cpu: "1000m"
+                memory: "2Gi"
