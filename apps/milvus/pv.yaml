@@ -4,11 +4,12 @@ metadata:
   name: milvus
 ---
 apiVersion: v1
-kind: PersistentVolume
+kind: PersistentVolumeClaim
 metadata:
-  name: milvus-standalone-pv
+  name: milvus
 spec:
-  capacity: { storage: 50Gi }
   accessModes: [ReadWriteOnce]
-  persistentVolumeReclaimPolicy: Retain
-  hostPath: { path: "/data/milvus-standalone" }
+  storageClassName: "openebs-hostpath"
+resources:
+  requests:
+    storage: 50Gi
