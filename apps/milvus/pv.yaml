@@ -2,15 +2,3 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: milvus
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: milvus
-  namespace: milvus
-spec:
-  accessModes: [ReadWriteOnce]
-  storageClassName: "openebs-hostpath"
-  resources:
-    requests:
-      storage: 50Gi
